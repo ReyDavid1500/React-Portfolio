@@ -10,7 +10,6 @@ const ProjectDetails = () => {
 	const {id: projectId} = useParams();
 
 	const selectedProject = singleProjectData.find(project => project.id === Number(projectId))
-	console.log(selectedProject)
 
 	return (
 		<motion.div
