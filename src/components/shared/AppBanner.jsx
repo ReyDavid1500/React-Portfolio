@@ -77,19 +77,19 @@ const AppBanner = () => {
           initial={{ opacity: 0, y: -180 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
-          className="flex flex-col gap-3 items-center"
+          className="flex flex-col sm:gap-3 items-center"
         >
-          <div className="flex gap-10 justify-center items-center">
+          <div className="flex sm:gap-10 justify-center items-center">
             <TypeScriptIcon className="w-20" />
             <ReactIcon className="w-20"/>
             <TailwindIcon className="w-40 dark:text-white" />
           </div>
-          <div className="flex gap-10 justify-center items-center">
+          <div className="flex sm:gap-10 justify-center items-center">
             <ReduxIcon className="w-20"/>
             <NodeIcon className="w-28"/>
             <ExpressIcon className="w-16 dark:text-white"/>
           </div>
-          <div className="flex gap-10 justify-center items-center">
+          <div className="flex sm:gap-10 justify-center items-center">
             <NestIcon className="w-28"/>
             <MongoIcon className="w-28"/>
             <SqlServerIcon className="w-28 text-[#231f1f] dark:text-white"/>
