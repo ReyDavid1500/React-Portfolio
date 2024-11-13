@@ -30,7 +30,6 @@ function App() {
 								path="projects/single-project/:id"
 								element={<ProjectDetails />}
 							/>
-
 							<Route path="about" element={<About />} />
 							<Route path="courses" element={<Certificates />} />
 						</Routes>

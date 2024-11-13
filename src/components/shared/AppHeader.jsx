@@ -1,12 +1,9 @@
 import { useState } from "react";
 import { FiMenu, FiMoon, FiSun, FiX } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import useThemeSwitcher from "../../hooks/useThemeSwitcher";
 import HireMeModal from "../HireMeModal";
-import logoLight from "../../images/logo-light.svg";
-import logoDark from "../../images/logo-dark.svg";
 import { motion } from "framer-motion";
-import Button from "../reusable/Button";
 
 const AppHeader = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -43,17 +40,17 @@ const AppHeader = () => {
       className="sm:container sm:mx-auto"
     >
       <div className="z-10 max-w-screen-lg xl:max-w-screen-xl block sm:flex sm:justify-between sm:items-center py-6">
-        {/* Header menu links and small screen hamburger menu */}
+        {/* Header menu NavLinks and small screen hamburger menu */}
         <div className="flex justify-between items-center px-4 sm:px-0">
           {/* <div>
-            <Link to="/">
+            <NavLink to="/">
                 <div className="flex gap-2 items-center">
                   <h1 className="font-general-medium text-lg md:text-xl lg:text-2xl xl:text-3xl text-center leading-normal text-gray-500 dark:text-gray-200">
                     <span className="text-4xl">D</span>avid
                   </h1>
                   <img src="/crownIcon.svg" height={40} width={40} />
                 </div>
-            </Link>
+            </NavLink>
           </div> */}
 
           {/* Theme switcher small screen */}
@@ -92,7 +89,7 @@ const AppHeader = () => {
           </div>
         </div>
 
-        {/* Header links small screen */}
+        {/* Header NavLinks small screen */}
         <div
           className={
             showMenu
@@ -100,34 +97,46 @@ const AppHeader = () => {
               : "hidden"
           }
         >
-          <Link
+          <NavLink
             to="/"
             className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
             aria-label="Projects"
+            style={({isActive}) => ({
+              fontWeight: isActive ? "bold" : "",
+            })}
           >
             Home
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/projects"
             className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark"
             aria-label="Projects"
+            style={({isActive}) => ({
+              fontWeight: isActive ? "bold" : "",
+            })}
           >
             Projects
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/about"
             className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark"
             aria-label="About Me"
+            style={({isActive}) => ({
+              fontWeight: isActive ? "bold" : "",
+            })}
           >
             About Me
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/courses"
             className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark"
             aria-label="Contact"
+            style={({isActive}) => ({
+              fontWeight: isActive ? "bold" : "",
+            })}
           >
             Certificates
-          </Link>
+          </NavLink>
           {/* <div className="border-t-2 pt-3 sm:pt-0 sm:border-t-0 border-primary-light dark:border-secondary-dark">
             <span
               onClick={showHireMeModal}
@@ -139,36 +148,52 @@ const AppHeader = () => {
           </div> */}
         </div>
 
-        {/* Header links large screen */}
+        {/* Header NavLinks large screen */}
         <div className="font-general-medium hidden m-0 sm:ml-4 mt-5 sm:mt-3 sm:flex p-5 sm:p-0 justify-center items-center shadow-lg sm:shadow-none">
-          <Link
+          <NavLink
             to="/"
             className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
             aria-label="Projects"
+            style={({isActive}) => ({
+              color: isActive ? "blue" : "",
+              textDecoration: isActive ? "underline" : ""
+            })}
           >
             Home
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/projects"
             className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
             aria-label="Projects"
+            style={({isActive}) => ({
+              color: isActive ? "blue" : "",
+              textDecoration: isActive ? "underline" : ""
+            })}
           >
             Projects
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/about"
             className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
             aria-label="About Me"
+            style={({isActive}) => ({
+              color: isActive ? "blue" : "",
+              textDecoration: isActive ? "underline" : "",
+            })}
           >
             About Me
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/courses"
             className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
             aria-label="Contact"
+            style={({isActive}) => ({
+              color: isActive ? "blue" : "",
+              textDecoration: isActive ? "underline" : ""
+            })}
           >
             Certificates
-          </Link>
+          </NavLink>
         </div>
 
         {/* Header right section buttons */}

@@ -19,7 +19,7 @@ const AppBanner = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ ease: "easeInOut", duration: 0.9, delay: 0.2 }}
-      className="flex flex-col sm:justify-between items-center sm:flex-row mt-12 md:mt-2 px-28"
+      className="flex flex-col sm:justify-between items-center sm:flex-row mt-12 md:mt-2 sm:px-28"
     >
       <div className="w-full md:w-1/3 text-left">
         <motion.h1
@@ -44,7 +44,7 @@ const AppBanner = () => {
           }}
           className="font-general-medium mt-4 text-lg md:text-xl lg:text-2xl xl:text-3xl text-center sm:text-left leading-normal text-gray-500 dark:text-gray-200"
         >
-          A Full-Stack Developer
+          A Full-Stack Web Developer
         </motion.p>
         <motion.div
           initial={{ opacity: 0 }}

@@ -46,7 +46,7 @@ export const coursesData = [
     {
         id: 7,
         title: "React Advanced",
-        summary: "Learned different types of React components and learn various characteristics and when to use them. Digged into more advanced hooks. Looked into building forms with React. Explored component composition and new patterns, such as Higher Order Components and Render Props. Created a web application that consumes API data and got familiar with the most commonly used React framework integrations, tools, and testing techniques.",
+        summary: "Learned different types of React components and various characteristics and when to use them. Digged into more advanced hooks. Looked into building forms with React. Explored component composition and new patterns, such as Higher Order Components and Render Props. Created a web application that consumes API data and got familiar with the most commonly used React framework integrations, tools, and testing techniques.",
         pdf: "./files/frontend.pdf",
         iconClass: "/icons/meta.svg"
     },
