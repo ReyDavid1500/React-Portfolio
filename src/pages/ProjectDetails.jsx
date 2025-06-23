@@ -3,7 +3,7 @@ import ProjectHeader from '../components/projects/ProjectHeader';
 import ProjectInfo from '../components/projects/ProjectInfo';
 import { motion } from 'framer-motion';
 import {singleProjectData} from "../data/singleProjectData"
-import { useLocation, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const ProjectDetails = () => {
 
