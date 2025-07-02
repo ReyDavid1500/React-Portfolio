@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const ProjectsGrid = () => {
   return (
-    <section className="py-5 sm:py-10 mt-5 sm:mt-10">
+    <section className="py-5 sm:py-10">
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

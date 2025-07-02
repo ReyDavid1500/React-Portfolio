@@ -97,7 +97,7 @@ export const singleProjectData = [
 				Our web application serves as a comprehensive dashboard for managing the company's products, orders, and users. Designed with an intuitive interface, it empowers administrators to efficiently handle various aspects of business operations.<br /> <br />
 				Built using React for a dynamic frontend, the application ensures a seamless user experience. The backend is powered by NestJS, providing a robust structure for handling complex business logic, user authentication and authorization and data management. We utilize SQL Server for reliable data storage and retrieval, ensuring that all information is easily accessible and secure.<br /> <br />
 				Deployed on Azure App Service, our solution benefits from cloud scalability and high availability, enabling the business to adapt to changing demands effortlessly. This integration of advanced technologies enhances operational efficiency and positions us for future growth.<br /> <br />
-				In a few days there will be credentials to access the dashboard, so you can see how it works.
+				You can access the demo pannel with the fallowing credentials: <br /> Email: demo.user@fromm.cl <br /> password: demo2309*
 			</p>
 		  )        },
       ],

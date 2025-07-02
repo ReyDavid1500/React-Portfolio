@@ -1,5 +1,6 @@
 const ProjectInfo = ({ data }) => {
   return (
+    <>
     <div className="block sm:flex gap-0 sm:gap-10 mt-14">
       <div className="w-full sm:w-1/3 text-left">
         {/* Single project client details */}
@@ -65,6 +66,15 @@ const ProjectInfo = ({ data }) => {
         })}
       </div>
     </div>
+    <div className="mt-10 text-left">
+      <a
+        href="/projects"
+        className="font-general-regular text-lg text-ternary-dark dark:text-ternary-light hover:text-indigo-500 dark:hover:text-indigo-400 cursor-pointer duration-300 flex items-center gap-2"
+      >
+        ← Back to Projects
+      </a>
+    </div>
+    </>
   );
 };
 

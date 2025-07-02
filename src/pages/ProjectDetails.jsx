@@ -12,6 +12,7 @@ const ProjectDetails = () => {
 	const selectedProject = singleProjectData.find(project => project.id === Number(projectId))
 
 	return (
+		<>
 		<motion.div
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1, delay: 1 }}
@@ -26,6 +27,7 @@ const ProjectDetails = () => {
 				<ProjectGallery data={selectedProject}/>
 				<ProjectInfo data={selectedProject}/>
 		</motion.div>
+		</>
 	);
 };
 
