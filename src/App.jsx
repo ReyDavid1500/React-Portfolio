@@ -10,6 +10,7 @@ import UseScrollToTop from './hooks/useScrollToTop';
 
 const About = lazy(() => import('./pages/AboutMe'));
 const Certificates = lazy(() => import('./pages/Certificates.jsx'));
+const Contact = lazy(() => import('./pages/Contact'));
 const Home = lazy(() => import('./pages/Home'));
 const Projects = lazy(() => import('./pages/Projects'));
 const ProjectDetails = lazy(() => import('./pages/ProjectDetails.jsx'));
@@ -32,6 +33,7 @@ function App() {
 							/>
 							<Route path="about" element={<About />} />
 							<Route path="courses" element={<Certificates />} />
+						<Route path="contact" element={<Contact />} />
 						</Routes>
 					</Suspense>
 					<AppFooter />

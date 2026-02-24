@@ -1,235 +1,148 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FiMenu, FiMoon, FiSun, FiX } from "react-icons/fi";
 import { NavLink } from "react-router-dom";
 import useThemeSwitcher from "../../hooks/useThemeSwitcher";
-import HireMeModal from "../HireMeModal";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+
+const navLinks = [
+  { to: "/", label: "Home" },
+  { to: "/projects", label: "Projects" },
+  { to: "/about", label: "About" },
+  { to: "/courses", label: "Certificates" },
+  { to: "/contact", label: "Contact" },
+];
 
 const AppHeader = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const [showModal, setShowModal] = useState(false);
   const [activeTheme, setTheme] = useThemeSwitcher();
+  const [scrolled, setScrolled] = useState(false);
 
-  function toggleMenu() {
-    if (!showMenu) {
-      setShowMenu(true);
-    } else {
-      setShowMenu(false);
-    }
-  }
-
-  function showHireMeModal() {
-    if (!showModal) {
-      document
-        .getElementsByTagName("html")[0]
-        .classList.add("overflow-y-hidden");
-      setShowModal(true);
-    } else {
-      document
-        .getElementsByTagName("html")[0]
-        .classList.remove("overflow-y-hidden");
-      setShowModal(false);
-    }
-  }
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <motion.nav
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      id="nav"
-      className="sm:container sm:mx-auto"
+    <motion.header
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-secondary-light/90 dark:bg-primary-dark/90 backdrop-blur-md shadow-sm border-b border-gray-100 dark:border-ternary-dark"
+          : "bg-secondary-light dark:bg-primary-dark"
+      }`}
     >
-      <div className="z-10 max-w-screen-lg xl:max-w-screen-xl block sm:flex sm:justify-between sm:items-center py-6">
-        {/* Header menu NavLinks and small screen hamburger menu */}
-        <div className="flex justify-between items-center px-4 sm:px-0">
-          {/* <div>
-            <NavLink to="/">
-                <div className="flex gap-2 items-center">
-                  <h1 className="font-general-medium text-lg md:text-xl lg:text-2xl xl:text-3xl text-center leading-normal text-gray-500 dark:text-gray-200">
-                    <span className="text-4xl">D</span>avid
-                  </h1>
-                  <img src="/crownIcon.svg" height={40} width={40} />
-                </div>
-            </NavLink>
-          </div> */}
+      <div className="container mx-auto">
+        <div className="flex justify-between items-center py-4">
+      
+          <NavLink to="/" className="flex items-center gap-2 group">
+            <div className="w-9 h-9 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-bold text-lg shadow-md group-hover:bg-indigo-500 transition-colors duration-200">
+              D
+            </div>
+            <span className="font-general-semibold text-lg text-primary-dark dark:text-primary-light hidden sm:block">
+              David<span className="text-indigo-500">.</span>
+            </span>
+          </NavLink>
 
-          {/* Theme switcher small screen */}
-          <div
-            onClick={() => setTheme(activeTheme)}
-            aria-label="Theme Switcher"
-            className="block sm:hidden ml-0 bg-primary-light dark:bg-ternary-dark p-3 shadow-sm rounded-xl cursor-pointer"
-          >
-            {activeTheme === "dark" ? (
-              <FiMoon className="text-ternary-dark hover:text-gray-400 dark:text-ternary-light dark:hover:text-primary-light text-xl" />
-            ) : (
-              <FiSun className="text-gray-200 hover:text-gray-50 text-xl" />
-            )}
-          </div>
-
-          {/* Small screen hamburger menu */}
-          <div className="sm:hidden">
-            <button
-              onClick={toggleMenu}
-              type="button"
-              className="focus:outline-none"
-              aria-label="Hamburger Menu"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                className="h-7 w-7 fill-current text-secondary-dark dark:text-ternary-light"
+          <nav className="hidden md:flex items-center gap-1">
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.to}
+                to={link.to}
+                end={link.to === "/"}
+                className={({ isActive }) =>
+                  `px-4 py-2 rounded-lg text-sm font-general-medium transition-all duration-200 ${
+                    isActive
+                      ? "bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400"
+                      : "text-gray-600 dark:text-gray-300 hover:text-primary-dark dark:hover:text-white hover:bg-gray-50 dark:hover:bg-ternary-dark"
+                  }`
+                }
               >
-                {showMenu ? (
-                  <FiX className="text-3xl" />
-                ) : (
-                  <FiMenu className="text-3xl" />
-                )}
-              </svg>
+                {link.label}
+              </NavLink>
+            ))}
+          </nav>
+
+          <div className="flex items-center gap-3">
+
+            <a
+              href="https://www.linkedin.com/in/rdguzmanp/"
+              target="_blank"
+              rel="noreferrer"
+              className="hidden lg:flex items-center gap-2 px-3 py-1.5 bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-700 rounded-full text-xs font-medium text-emerald-700 dark:text-emerald-400 hover:bg-emerald-100 dark:hover:bg-emerald-900/40 transition-colors duration-200"
+            >
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              Available Mar 2026
+            </a>
+
+            <button
+              onClick={() => setTheme(activeTheme)}
+              aria-label="Toggle theme"
+              className="p-2.5 rounded-lg bg-gray-100 dark:bg-ternary-dark text-gray-500 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-secondary-dark transition-colors duration-200"
+            >
+              {activeTheme === "dark" ? (
+                <FiSun className="text-lg" />
+              ) : (
+                <FiMoon className="text-lg" />
+              )}
+            </button>
+
+            <button
+              onClick={() => setShowMenu(!showMenu)}
+              aria-label="Toggle menu"
+              className="md:hidden p-2.5 rounded-lg bg-gray-100 dark:bg-ternary-dark text-gray-500 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-secondary-dark transition-colors duration-200"
+            >
+              {showMenu ? <FiX className="text-xl" /> : <FiMenu className="text-xl" />}
             </button>
           </div>
         </div>
-
-        {/* Header NavLinks small screen */}
-        <div
-          className={
-            showMenu
-              ? "block m-0 sm:ml-4 mt-5 sm:mt-3 sm:flex p-5 sm:p-0 justify-center items-center shadow-lg sm:shadow-none"
-              : "hidden"
-          }
-        >
-          <NavLink
-            to="/"
-            className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
-            aria-label="Projects"
-            style={({isActive}) => ({
-              fontWeight: isActive ? "bold" : "",
-            })}
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to="/projects"
-            className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark"
-            aria-label="Projects"
-            style={({isActive}) => ({
-              fontWeight: isActive ? "bold" : "",
-            })}
-          >
-            Projects
-          </NavLink>
-          <NavLink
-            to="/about"
-            className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark"
-            aria-label="About Me"
-            style={({isActive}) => ({
-              fontWeight: isActive ? "bold" : "",
-            })}
-          >
-            About Me
-          </NavLink>
-          <NavLink
-            to="/courses"
-            className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark"
-            aria-label="Contact"
-            style={({isActive}) => ({
-              fontWeight: isActive ? "bold" : "",
-            })}
-          >
-            Certificates
-          </NavLink>
-          {/* <div className="border-t-2 pt-3 sm:pt-0 sm:border-t-0 border-primary-light dark:border-secondary-dark">
-            <span
-              onClick={showHireMeModal}
-              className="font-general-medium sm:hidden block text-left text-md bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-sm px-4 py-2 mt-2 duration-300 w-24"
-              aria-label="Hire Me Button"
-            >
-              <Button title="Hire Me" />
-            </span>
-          </div> */}
-        </div>
-
-        {/* Header NavLinks large screen */}
-        <div className="font-general-medium hidden m-0 sm:ml-4 mt-5 sm:mt-3 sm:flex p-5 sm:p-0 justify-center items-center shadow-lg sm:shadow-none">
-          <NavLink
-            to="/"
-            className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
-            aria-label="Projects"
-            style={({isActive}) => ({
-              color: isActive ? "blue" : "",
-              textDecoration: isActive ? "underline" : ""
-            })}
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to="/projects"
-            className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
-            aria-label="Projects"
-            style={({isActive}) => ({
-              color: isActive ? "blue" : "",
-              textDecoration: isActive ? "underline" : ""
-            })}
-          >
-            Projects
-          </NavLink>
-          <NavLink
-            to="/about"
-            className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
-            aria-label="About Me"
-            style={({isActive}) => ({
-              color: isActive ? "blue" : "",
-              textDecoration: isActive ? "underline" : "",
-            })}
-          >
-            About Me
-          </NavLink>
-          <NavLink
-            to="/courses"
-            className="block text-left text-lg text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
-            aria-label="Contact"
-            style={({isActive}) => ({
-              color: isActive ? "blue" : "",
-              textDecoration: isActive ? "underline" : ""
-            })}
-          >
-            Certificates
-          </NavLink>
-        </div>
-
-        {/* Header right section buttons */}
-        <div className="hidden sm:flex justify-between items-center flex-col md:flex-row">
-          {/* <div className="hidden md:flex">
-            <span
-              onClick={showHireMeModal}
-              className="text-md font-general-medium bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-md px-5 py-2.5 duration-300"
-              aria-label="Hire Me Button"
-            >
-              <Button title="Hire Me" />
-            </span>
-          </div> */}
-
-          {/* Theme switcher large screen */}
-          <div
-            onClick={() => setTheme(activeTheme)}
-            aria-label="Theme Switcher"
-            className="ml-8 bg-primary-light dark:bg-ternary-dark p-3 shadow-sm rounded-xl cursor-pointer"
-          >
-            {activeTheme === "dark" ? (
-              <FiMoon className="text-ternary-dark hover:text-gray-400 dark:text-ternary-light dark:hover:text-primary-light text-xl" />
-            ) : (
-              <FiSun className="text-gray-200 hover:text-gray-50 text-xl" />
-            )}
-          </div>
-        </div>
       </div>
-      {/* Hire me modal */}
-      <div>
-        {showModal ? (
-          <HireMeModal onClose={showHireMeModal} onRequest={showHireMeModal} />
-        ) : null}
-        {showModal ? showHireMeModal : null}
-      </div>
-    </motion.nav>
+
+      <AnimatePresence>
+        {showMenu && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+            className="md:hidden border-t border-gray-100 dark:border-ternary-dark bg-secondary-light dark:bg-primary-dark overflow-hidden"
+          >
+            <nav className="container mx-auto py-4 flex flex-col gap-1">
+              {navLinks.map((link) => (
+                <NavLink
+                  key={link.to}
+                  to={link.to}
+                  end={link.to === "/"}
+                  onClick={() => setShowMenu(false)}
+                  className={({ isActive }) =>
+                    `px-4 py-3 rounded-lg text-sm font-general-medium transition-all duration-200 ${
+                      isActive
+                        ? "bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400"
+                        : "text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-ternary-dark"
+                    }`
+                  }
+                >
+                  {link.label}
+                </NavLink>
+              ))}
+              <div className="mt-2 px-4">
+                <a
+                  href="https://www.linkedin.com/in/rdguzmanp/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 text-xs font-medium text-emerald-600 dark:text-emerald-400"
+                >
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  Available from March 2026 · Relocating to Switzerland
+                </a>
+              </div>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.header>
   );
 };
 
