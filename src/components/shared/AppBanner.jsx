@@ -13,10 +13,10 @@ import { SqlServerIcon } from "../icons/SqlServerIcon";
 import { cvURL } from "../../data/aboutMeData";
 
 const roles = [
+  "Software Engineer",
+  "React & TypeScript",
   "Full-Stack Developer",
-  "React & TypeScript Engineer",
-  "NestJS Microservices Builder",
-  "Frontend Specialist",
+  "NestJS Microservices",
 ];
 
 const techStack = [
