@@ -1,5 +1,3 @@
-import React from "react";
-
 const AboutClientSingle = ({ title, desc, href, icon, id }) => {
   return (
     <div className="relative sm:w-64 w-full py-5 px-10 border bg-secondary-light border-ternary-light dark:border-ternary-dark shadow-sm rounded-lg mb-8 cursor-pointer group sm:hover:border-blue-500 sm:hover:shadow-md">

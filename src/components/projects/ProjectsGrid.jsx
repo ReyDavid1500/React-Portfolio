@@ -2,23 +2,24 @@ import ProjectSingle from "./ProjectSingle";
 import { projectsData } from "../../data/projects";
 import { motion } from 'framer-motion';
 
-
 const ProjectsGrid = () => {
   return (
-    <section className="py-5 sm:py-10">
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{
-          ease: "easeInOut",
-          duration: 0.9,
-          delay: 0.2,
-        }}
-        className="font-general-medium mt-4 text-lg md:text-xl lg:text-2xl xl:text-3xl text-center leading-normal text-gray-500 dark:text-gray-200"
+    <section className="py-16 sm:py-20">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ ease: "easeOut", duration: 0.5 }}
+        className="mb-12"
       >
-        My Projects
-      </motion.p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10">
+        <p className="text-xs font-semibold text-indigo-500 dark:text-indigo-400 uppercase tracking-widest mb-2">
+          Portfolio
+        </p>
+        <h2 className="font-general-semibold text-3xl sm:text-4xl text-primary-dark dark:text-primary-light">
+          Featured Projects
+        </h2>
+      </motion.div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {projectsData.map((project) => (
           <ProjectSingle
             title={project.title}
@@ -26,6 +27,9 @@ const ProjectsGrid = () => {
             image={project.img}
             key={project.id}
             id={project.id}
+            techs={project.techs || []}
+            description={project.description || ""}
+            liveUrl={project.liveUrl || ""}
           />
         ))}
       </div>

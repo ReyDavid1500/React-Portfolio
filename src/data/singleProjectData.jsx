@@ -151,41 +151,36 @@ export const singleProjectData = [
   {
     id: 3,
     ProjectHeader: {
-      title: "ShoppingList Web App",
-      tags: "UI / Frontend / Server API",
+      title: "Weather App",
+      tags: "Frontend / React Query / REST API",
     },
     ProjectInfo: {
       ClientHeading: "Links",
       Links: [
         {
-          id: 2,
-          title: "FrontEnd GitHub Repository",
-          href: "https://github.com/ReyDavid1500/ShoppingList",
-        },
-        {
           id: 1,
-          title: "Backend GitHub Repository",
-          href: "https://github.com/ReyDavid1500/ShoppingList-server",
+          title: "GitHub Repository",
+          href: "https://github.com/ReyDavid1500/weather-app",
         },
         {
-          id: 3,
-          title: "Demo Website",
-          href: "https://shopping-list-drab.vercel.app/",
+          id: 2,
+          title: "Live Demo",
+          href: "https://weather-app-3t3.pages.dev/",
         },
       ],
       Technologies: [
         {
           title: "Tools & Technologies",
           techs: [
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "React.js",
-            "TailwindCSS",
-            "Express",
-            "MongoDB",
-            "Moongose",
-            "JWT",
+            "React 19",
+            "TypeScript",
+            "Tailwind CSS v4",
+            "TanStack Query v5",
+            "Axios",
+            "OpenWeatherMap API",
+            "Vite",
+            "PapaParse",
+            "Cloudflare Pages",
           ],
         },
       ],
@@ -195,154 +190,31 @@ export const singleProjectData = [
           id: 1,
           details: (
             <p>
-              A full-stack web application designed to streamline shopping list
-              management through an intuitive user experience and robust backend
-              architecture. The application features secure user authentication,
-              real-time data synchronization, and comprehensive CRUD operations
-              for efficient list management.
+              A real-time weather dashboard built with React 19 and TypeScript,
+              showcasing modern frontend patterns around data fetching and state
+              management.
               <br />
               <br />
-              Built with React.js and styled using TailwindCSS, the frontend
-              delivers a responsive and modern interface that adapts seamlessly
-              across devices. The application implements JWT-based
-              authentication for secure user sessions and maintains state
-              management for optimal performance.
+              The app connects to the OpenWeatherMap API to display hourly
+              forecasts and a 5-day outlook for multiple cities simultaneously.
+              Users can search and add any city via a client-side search powered
+              by PapaParse — a CSV city dataset is parsed and filtered in the
+              browser, keeping the experience instant without a backend.
               <br />
               <br />
-              The backend leverages Express.js with MongoDB and Mongoose ODM to
-              create a scalable RESTful API architecture. Key features include
-              user registration and authentication and efficient database
-              operations. <br />
+              Data fetching is managed entirely through TanStack Query v5, with
+              a 5-minute stale time and manual refresh support. All business
+              logic is encapsulated in four custom hooks (
+              <code>useWeatherData</code>, <code>useCitySearch</code>,{" "}
+              <code>useCityTabs</code>, <code>useOnClickOutside</code>), keeping
+              components clean and focused on presentation.
               <br />
+              <br />
+              Styled with Tailwind CSS v4 and deployed on Cloudflare Pages.
             </p>
           ),
         },
       ],
     },
   },
-  // {
-  //   id: 4,
-  //   ProjectHeader: {
-  //     title: "Shopping List App BackEnd",
-  //     tags: "API / Server",
-  //   },
-  //   ProjectInfo: {
-  //     ClientHeading: "Links",
-  //     Links: [
-  //       {
-  //         id: 2,
-  //         title: "GitHub Repository",
-  //         href: "https://github.com/ReyDavid1500/ShoppingList-server",
-  //       },
-  //     ],
-  //     Technologies: [
-  //       {
-  //         title: "Tools & Technologies",
-  //         techs: ["JavaScript", "Express", "MongoDB", "Moongose", "JWT"],
-  //       },
-  //     ],
-  //     ProjectDetailsHeading: "Description",
-  //     ProjectDetails: [
-  //       {
-  //         id: 1,
-  //         details:
-  //           "Here you can see the server's repository. Different technologies were used to create the data base and to manage HTTP requests and authentication.",
-  //       },
-  //     ],
-  //   },
-  // },
-  // {
-  //   id: 5,
-  //   ProjectHeader: {
-  //     title: "Rumen Web Page",
-  //     tags: "UI / Frontend / REST API",
-  //   },
-  //   ProjectInfo: {
-  //     ClientHeading: "Links",
-  //     Links: [
-  //       {
-  //         id: 2,
-  //         title: "FrontEnd GitHub Repository",
-  //         href: "https://github.com/ReyDavid1500/rumen",
-  //       },
-  //       {
-  //         id: 1,
-  //         title: "BackEnd GitHub Repository",
-  //         href: "https://github.com/ReyDavid1500/rumen-server",
-  //       },
-  //       {
-  //         id: 3,
-  //         title: "Demo Website",
-  //         href: "https://rumen-reydavid1500.vercel.app/",
-  //       },
-  //     ],
-  //     Technologies: [
-  //       {
-  //         title: "Tools & Technologies",
-  //         techs: ["TypeScript", "React.js", "TailwindCSS", "NestJS", "MongoDB"],
-  //       },
-  //     ],
-  //     ProjectDetailsHeading: "Description",
-  //     ProjectDetails: [
-  //       {
-  //         id: 1,
-  //         details: (
-  //           <p>
-  //             A restaurant web application that combines a landing page with a e-commerce platform.
-  //             The application showcases restaurant information, menu items, and
-  //             enables customers to place orders for delivery or
-  //             pickup.
-  //             <br />
-  //             <br />
-  //             Built with TypeScript and React.js, the frontend delivers a
-  //             responsive user interface styled with TailwindCSS.
-  //             The application features dynamic menu management, shopping cart
-  //             functionality, order processing, and real-time order status
-  //             updates.
-  //             <br />
-  //             <br />
-  //             The backend architecture utilizes NestJS framework with MongoDB
-  //             for scalable data management.
-  //           </p>
-  //         ),
-  //       },
-  //     ],
-  //   },
-  // },
-  // {
-  //   id: 6,
-  //   ProjectHeader: {
-  //     title: "Rumen Mobile APP",
-  //     tags: "UI / Frontend",
-  //   },
-  //   ProjectInfo: {
-  //     ClientHeading: "Links",
-  //     Links: [
-  //       {
-  //         id: 2,
-  //         title: "GitHub Repository",
-  //         href: "https://github.com/ReyDavid1500/rumen-mobile-app",
-  //       },
-  //       // {
-  //       // 	id: 3,
-  //       // 	title: 'Demo Website',
-  //       // 	href: 'https://shopping-list-reydavid1500.vercel.app/signin',
-  //       // },
-  //     ],
-  //     Technologies: [
-  //       {
-  //         title: "Tools & Technologies",
-  //         techs: ["TypeScript", "ReactNative", "NativewindCSS", "Expo"],
-  //       },
-  //     ],
-  //     ProjectDetailsHeading: "Description",
-  //     ProjectDetails: [
-  //       {
-  //         id: 1,
-  //         details:
-  //           "Mobile Restaurant e-commerce platform that is being developed with React Native, using NativeWind for the styles and Expo to cross platform compatibility. Here you can see the source code, deployment will be coming soon.",
-  //       },
-  //     ],
-  //   },
-  // },
 ];
