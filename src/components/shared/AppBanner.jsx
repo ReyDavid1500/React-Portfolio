@@ -25,9 +25,17 @@ const techStack = [
   { icon: <TailwindIcon className="w-20 h-16" />, label: "Tailwind" },
   { icon: <NestIcon className="w-20 h-20" />, label: "NestJS" },
   { icon: <NodeIcon className="w-16 h-16" />, label: "Node.js" },
-  { icon: <ExpressIcon className="w-16 h-16 dark:text-white" />, label: "Express" },
+  {
+    icon: <ExpressIcon className="w-16 h-16 dark:text-white" />,
+    label: "Express",
+  },
   { icon: <MongoIcon className="w-16 h-12" />, label: "MongoDB" },
-  { icon: <SqlServerIcon className="w-16 h-12 text-[#231f1f] dark:text-white" />, label: "SQL Server" },
+  {
+    icon: (
+      <SqlServerIcon className="w-16 h-12 text-[#231f1f] dark:text-white" />
+    ),
+    label: "SQL Server",
+  },
 ];
 
 const containerVariants = {
@@ -72,7 +80,6 @@ const AppBanner = () => {
 
   return (
     <section className="relative min-h-[calc(100vh-72px)] flex items-center overflow-hidden">
-   
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 right-0 w-96 h-96 bg-indigo-100 dark:bg-indigo-900/20 rounded-full blur-3xl opacity-40" />
         <div className="absolute bottom-20 left-0 w-72 h-72 bg-purple-100 dark:bg-purple-900/10 rounded-full blur-3xl opacity-30" />
@@ -85,13 +92,11 @@ const AppBanner = () => {
           animate="visible"
           className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center py-12 lg:py-20"
         >
-     
           <div className="space-y-6">
-          
             <motion.div variants={itemVariants}>
               <span className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-50 dark:bg-indigo-900/30 border border-indigo-200 dark:border-indigo-700 rounded-full text-sm font-medium text-indigo-700 dark:text-indigo-300">
                 <FiMapPin className="w-3.5 h-3.5" />
-                Relocating to Switzerland · March 2026
+                Sefiweidstrasse 10, 8360 Eschlikon TG
               </span>
             </motion.div>
 
@@ -104,8 +109,10 @@ const AppBanner = () => {
               </h1>
             </motion.div>
 
-
-            <motion.div variants={itemVariants} className="h-10 flex items-center">
+            <motion.div
+              variants={itemVariants}
+              className="h-10 flex items-center"
+            >
               <span className="text-xl sm:text-2xl lg:text-3xl font-general-medium text-indigo-600 dark:text-indigo-400">
                 {displayed}
               </span>
@@ -116,13 +123,24 @@ const AppBanner = () => {
               variants={itemVariants}
               className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-lg font-general-regular"
             >
-              Software Engineer specializing in React, TypeScript, and NestJS microservices.
-              Currently building fraud detection and risk underwriting systems at{" "}
-              <span className="font-semibold text-primary-dark dark:text-primary-light">Galgo</span>.
-              <span className="text-indigo-600 dark:text-indigo-400 font-medium"> MSc-equivalent Engineering background</span> — precise, scalable, test-driven.
+              Software Engineer specializing in React, TypeScript, and NestJS
+              microservices. Currently building fraud detection and risk
+              underwriting systems at{" "}
+              <span className="font-semibold text-primary-dark dark:text-primary-light">
+                Galgo
+              </span>
+              .
+              <span className="text-indigo-600 dark:text-indigo-400 font-medium">
+                {" "}
+                MSc-equivalent Engineering background
+              </span>{" "}
+              — precise, scalable, test-driven.
             </motion.p>
 
-            <motion.div variants={itemVariants} className="flex flex-wrap gap-3 pt-2">
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-wrap gap-3 pt-2"
+            >
               <a
                 href={cvURL}
                 target="_blank"
@@ -162,7 +180,10 @@ const AppBanner = () => {
             </motion.div>
           </div>
 
-          <motion.div variants={itemVariants} className="flex flex-col items-center gap-6">
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-col items-center gap-6"
+          >
             <p className="text-sm font-general-medium text-gray-400 dark:text-gray-500 uppercase tracking-widest">
               Tech Stack
             </p>
@@ -172,7 +193,11 @@ const AppBanner = () => {
                   key={tech.label}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.4 + i * 0.07, duration: 0.4, ease: "easeOut" }}
+                  transition={{
+                    delay: 0.4 + i * 0.07,
+                    duration: 0.4,
+                    ease: "easeOut",
+                  }}
                   whileHover={{ scale: 1.1, y: -2 }}
                   className="flex flex-col items-center gap-1.5 p-3 rounded-xl bg-gray-50 dark:bg-ternary-dark border border-gray-100 dark:border-secondary-dark hover:border-indigo-200 dark:hover:border-indigo-700 hover:bg-white dark:hover:bg-secondary-dark transition-all duration-200 cursor-default group shadow-sm"
                 >
@@ -187,7 +212,18 @@ const AppBanner = () => {
             </div>
 
             <div className="flex flex-wrap justify-center gap-2 max-w-sm">
-              {["TanStack Query", "Zustand", "Prisma ORM", "Jest", "CI/CD", "Agile/SCRUM"].map((skill) => (
+              {[
+                "TanStack Query",
+                "Zustand",
+                "Prisma ORM",
+                "Mircoservices",
+                "Event Driven Arquitecture",
+                "Jest",
+                "CI/CD",
+                "AWS",
+                "Azure",
+                "Agile/SCRUM",
+              ].map((skill) => (
                 <span
                   key={skill}
                   className="px-3 py-1 text-xs font-medium text-gray-600 dark:text-gray-300 bg-white dark:bg-ternary-dark border border-gray-200 dark:border-secondary-dark rounded-full shadow-sm"

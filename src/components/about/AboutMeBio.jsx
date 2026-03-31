@@ -4,8 +4,8 @@ import { FiMapPin, FiCalendar, FiBookOpen, FiGlobe } from "react-icons/fi";
 const highlights = [
   {
     icon: <FiMapPin className="w-4 h-4" />,
-    label: "Relocating to Switzerland",
-    sub: "March 2026 · B permit via family reunification",
+    label: "Sefiweidstrasse 10, 8360 Eschlikon TG",
+    sub: "B permit via family reunification",
   },
   {
     icon: <FiBookOpen className="w-4 h-4" />,
@@ -93,8 +93,7 @@ const AboutMeBio = () => {
             problems.
           </p>
           <p className="font-general-regular text-gray-700 dark:text-gray-300 leading-relaxed text-base">
-            I'm relocating to Switzerland in March 2026 and am actively looking for opportunities
-            where I can contribute to a high-quality engineering team. I thrive in collaborative,
+            Looking for opportunities where I can contribute to a high-quality engineering team. I thrive in collaborative,
             Agile environments and I'm passionate about writing clean, maintainable, well-tested code.
           </p>
 
@@ -155,7 +154,7 @@ const AboutMeBio = () => {
                 Outdoors & Fitness
               </h3>
               <p className="text-sm font-general-regular text-gray-600 dark:text-gray-400 leading-relaxed">
-                Hiking, traveling, and regular weight training keep me sharp. Moving to Switzerland means
+                Hiking, traveling, and regular weight training keep me sharp. Living in Switzerland means
                 access to some of the world's best trails — something I'm genuinely excited about.
               </p>
             </div>

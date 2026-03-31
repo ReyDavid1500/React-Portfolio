@@ -7,7 +7,7 @@ const Home = () => {
     <div>
       <AppBanner />
       <div className="container mx-auto">
-        <ExperienceTimeline />
+        {/* <ExperienceTimeline /> */}
         <ProjectsGrid />
       </div>
     </div>

@@ -27,7 +27,7 @@ const contactLinks = [
   {
     icon: <FiMapPin className="w-5 h-5" />,
     label: "Location",
-    value: "Santiago, Chile → Switzerland (Mar 2026)",
+    value: "Sefiweidstrasse 10, 8360 Eschlikon TG",
     href: null,
     color: "emerald",
   },
@@ -66,7 +66,7 @@ const Contact = () => {
           Let's Connect
         </h1>
         <p className="text-gray-600 dark:text-gray-400 font-general-regular text-base leading-relaxed">
-          I'm actively looking for opportunities in Switzerland, available from March 2026.
+          I'm actively looking for opportunities in Switzerland, available from April 2026.
           Whether you have a role, a project, or just want to chat — I'd love to hear from you.
         </p>
       </motion.div>
@@ -113,10 +113,10 @@ const Contact = () => {
           <span className="mt-1.5 w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
           <div>
             <p className="text-sm font-general-medium text-indigo-700 dark:text-indigo-300 mb-0.5">
-              Open to Opportunities · Available from March 2026
+              Open to Opportunities · Available from April 2026
             </p>
             <p className="text-xs text-indigo-600 dark:text-indigo-400 font-general-regular">
-              Relocating to Switzerland. Open to full-time roles, contracts, and project-based work.
+              Open to full-time roles, contracts, and project-based work.
             </p>
           </div>
         </div>
