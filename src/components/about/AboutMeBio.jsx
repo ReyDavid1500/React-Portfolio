@@ -4,7 +4,7 @@ import { FiMapPin, FiCalendar, FiBookOpen, FiGlobe } from "react-icons/fi";
 const highlights = [
   {
     icon: <FiMapPin className="w-4 h-4" />,
-    label: "Sefiweidstrasse 10, 8360 Eschlikon TG",
+    label: "Hinterwiesliweg 6, 8400 Winterthur ZH",
     sub: "B permit via family reunification",
   },
   {
@@ -62,10 +62,10 @@ const AboutMeBio = () => {
               className="rounded-2xl w-full object-cover shadow-lg"
               alt="David Guzmán"
             />
-            <div className="absolute -bottom-4 -right-4 bg-indigo-600 text-white rounded-2xl px-4 py-3 shadow-lg">
+            {/* <div className="absolute -bottom-4 -right-4 bg-indigo-600 text-white rounded-2xl px-4 py-3 shadow-lg">
               <p className="text-xs font-medium opacity-80">Currently at</p>
               <p className="text-sm font-bold">Galgo</p>
-            </div>
+            </div> */}
           </div>
         </motion.div>
 
@@ -75,8 +75,7 @@ const AboutMeBio = () => {
             <span className="font-semibold text-primary-dark dark:text-primary-light">
               React and TypeScript
             </span>{" "}
-            and building scalable, production-grade web applications. Currently at{" "}
-            <span className="font-semibold text-primary-dark dark:text-primary-light">Galgo</span>,
+            and building scalable, production-grade web applications.
             I design and maintain NestJS microservices for fraud detection and risk underwriting —
             working in an event-driven architecture with message queues and targeting 90%+ test
             coverage with Jest.

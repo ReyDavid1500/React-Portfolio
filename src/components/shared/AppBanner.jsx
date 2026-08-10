@@ -96,7 +96,7 @@ const AppBanner = () => {
             <motion.div variants={itemVariants}>
               <span className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-50 dark:bg-indigo-900/30 border border-indigo-200 dark:border-indigo-700 rounded-full text-sm font-medium text-indigo-700 dark:text-indigo-300">
                 <FiMapPin className="w-3.5 h-3.5" />
-                Sefiweidstrasse 10, 8360 Eschlikon TG
+                Hinterwiesliweg 6, 8400 Winterthur ZH
               </span>
             </motion.div>
 
@@ -124,12 +124,7 @@ const AppBanner = () => {
               className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-lg font-general-regular"
             >
               Software Engineer specializing in React, TypeScript, and NestJS
-              microservices. Currently building fraud detection and risk
-              underwriting systems at{" "}
-              <span className="font-semibold text-primary-dark dark:text-primary-light">
-                Galgo
-              </span>
-              .
+              microservices.
               <span className="text-indigo-600 dark:text-indigo-400 font-medium">
                 {" "}
                 MSc-equivalent Engineering background
