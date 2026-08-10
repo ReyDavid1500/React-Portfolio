@@ -1,5 +1,4 @@
 import AppBanner from "../components/shared/AppBanner";
-import ExperienceTimeline from "../components/experience/ExperienceTimeline";
 import ProjectsGrid from "../components/projects/ProjectsGrid";
 
 const Home = () => {
@@ -7,7 +6,6 @@ const Home = () => {
     <div>
       <AppBanner />
       <div className="container mx-auto">
-        {/* <ExperienceTimeline /> */}
         <ProjectsGrid />
       </div>
     </div>
