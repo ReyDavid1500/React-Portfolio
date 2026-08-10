@@ -27,7 +27,7 @@ const contactLinks = [
   {
     icon: <FiMapPin className="w-5 h-5" />,
     label: "Location",
-    value: "Sefiweidstrasse 10, 8360 Eschlikon TG",
+    value: "Hinterwiesliweg 6, 8400 Winterthur ZH",
     href: null,
     color: "emerald",
   },
