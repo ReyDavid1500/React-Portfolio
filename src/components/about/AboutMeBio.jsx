@@ -4,7 +4,7 @@ import { FiMapPin, FiCalendar, FiBookOpen, FiGlobe } from "react-icons/fi";
 const highlights = [
   {
     icon: <FiMapPin className="w-4 h-4" />,
-    label: "Hinterwiesliweg 6, 8400 Winterthur ZH",
+    label: "Winterthur ZH",
     sub: "B permit via family reunification",
   },
   {
@@ -14,7 +14,7 @@ const highlights = [
   },
   {
     icon: <FiCalendar className="w-4 h-4" />,
-    label: "3+ Years in Software Engineering",
+    label: "2+ Years in Software Engineering",
     sub: "Frontend & Full-Stack",
   },
   {

@@ -27,7 +27,7 @@ const contactLinks = [
   {
     icon: <FiMapPin className="w-5 h-5" />,
     label: "Location",
-    value: "Hinterwiesliweg 6, 8400 Winterthur ZH",
+    value: "Winterthur ZH",
     href: null,
     color: "emerald",
   },

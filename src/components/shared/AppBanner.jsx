@@ -96,7 +96,7 @@ const AppBanner = () => {
             <motion.div variants={itemVariants}>
               <span className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-50 dark:bg-indigo-900/30 border border-indigo-200 dark:border-indigo-700 rounded-full text-sm font-medium text-indigo-700 dark:text-indigo-300">
                 <FiMapPin className="w-3.5 h-3.5" />
-                Hinterwiesliweg 6, 8400 Winterthur ZH
+                Winterthur ZH
               </span>
             </motion.div>
 
@@ -159,7 +159,7 @@ const AppBanner = () => {
               className="flex gap-6 sm:gap-8 pt-2 border-t border-gray-100 dark:border-ternary-dark"
             >
               {[
-                { value: "3+", label: "Years Experience" },
+                { value: "2+", label: "Years Experience" },
                 { value: "3", label: "Production Apps" },
                 { value: "90%+", label: "Test Coverage" },
               ].map((stat) => (
