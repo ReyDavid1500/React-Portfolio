@@ -4,23 +4,23 @@ import { FiMapPin, FiCalendar, FiBookOpen, FiGlobe } from "react-icons/fi";
 const highlights = [
   {
     icon: <FiMapPin className="w-4 h-4" />,
-    label: "Winterthur ZH",
-    sub: "B permit via family reunification",
+    label: "Winterthur ZH · B Permit",
+    sub: "No sponsorship needed · DACH travel ready",
   },
   {
     icon: <FiBookOpen className="w-4 h-4" />,
-    label: "MSc-level Engineering Degree",
+    label: "Materials Engineer (MSc-level)",
     sub: "Simón Bolívar University, Venezuela",
   },
   {
     icon: <FiCalendar className="w-4 h-4" />,
-    label: "2+ Years in Software Engineering",
-    sub: "Frontend & Full-Stack",
+    label: "5+ Years Industrial B2B",
+    sub: "Oil & gas · Manufacturing · Distribution",
   },
   {
     icon: <FiGlobe className="w-4 h-4" />,
     label: "Languages",
-    sub: "Spanish (Native) · English C1 · German A2",
+    sub: "Spanish (Native) · English C1 · German A2→B1",
   },
 ];
 
@@ -50,7 +50,7 @@ const AboutMeBio = () => {
           David Guzmán
         </h1>
         <p className="text-lg text-indigo-600 dark:text-indigo-400 font-general-medium mt-1">
-          Software Engineer · React & TypeScript Specialist
+          Forward Deployed AI Engineer · TypeScript · Python · Industrial B2B
         </p>
       </motion.div>
 
@@ -71,29 +71,21 @@ const AboutMeBio = () => {
 
         <motion.div variants={itemVariants} className="lg:col-span-2 space-y-5">
           <p className="font-general-regular text-gray-700 dark:text-gray-300 leading-relaxed text-base">
-            I'm a Software Engineer with strong Frontend and Full-Stack experience, specializing in{" "}
+            I'm a Forward Deployed Engineer building and deploying AI systems for industrial and B2B customers. I work in{" "}
             <span className="font-semibold text-primary-dark dark:text-primary-light">
-              React and TypeScript
-            </span>{" "}
-            and building scalable, production-grade web applications.
-            I design and maintain NestJS microservices for fraud detection and risk underwriting —
-            working in an event-driven architecture with message queues and targeting 90%+ test
-            coverage with Jest.
+              TypeScript and Python
+            </span>
+            , ship production-grade applications end-to-end, and use the Anthropic API daily — tool calling, RAG pipelines, agentic loops. I use Claude Code and Cursor as my primary development tools.
           </p>
           <p className="font-general-regular text-gray-700 dark:text-gray-300 leading-relaxed text-base">
-            My background is genuinely multidisciplinary: I hold an{" "}
+            My background is the differentiator: I spent{" "}
             <span className="font-semibold text-primary-dark dark:text-primary-light">
-              MSc-equivalent Materials Engineering degree
+              seven years as a Technical Sales Engineer
             </span>{" "}
-            from Simón Bolívar University, spent seven years as a Sales Engineer in the industrial
-            sector, and founded a restaurant business before transitioning into software. That journey
-            shaped me into a developer who thinks beyond the code — understanding business context,
-            communicating clearly with stakeholders, and delivering solutions that actually solve
-            problems.
+            in oil & gas, mining, manufacturing, and distribution — running workshops, mapping workflows, and specifying technical solutions for procurement and engineering managers. I know what operational pain looks like from inside the teams that live with it, not from a requirements document.
           </p>
           <p className="font-general-regular text-gray-700 dark:text-gray-300 leading-relaxed text-base">
-            Looking for opportunities where I can contribute to a high-quality engineering team. I thrive in collaborative,
-            Agile environments and I'm passionate about writing clean, maintainable, well-tested code.
+            At FROMM Chile (Swiss industrial manufacturer, FROMM Group subsidiary), I was the sole developer — scoped with Swiss client stakeholders, built, and shipped to production with no handoff. That's the engagement model I want every day: own the problem, deliver the solution, see the impact.
           </p>
 
           <div className="grid sm:grid-cols-2 gap-3 pt-2">

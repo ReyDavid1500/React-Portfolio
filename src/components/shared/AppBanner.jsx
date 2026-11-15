@@ -13,10 +13,10 @@ import { SqlServerIcon } from "../icons/SqlServerIcon";
 import { cvURL } from "../../data/aboutMeData";
 
 const roles = [
-  "Software Engineer",
-  "React & TypeScript",
-  "Full-Stack Developer",
-  "NestJS Microservices",
+  "Forward Deployed Engineer",
+  "TypeScript · Python · AI",
+  "Industrial B2B Domain",
+  "Anthropic API · RAG · Agents",
 ];
 
 const techStack = [
@@ -123,13 +123,12 @@ const AppBanner = () => {
               variants={itemVariants}
               className="text-base sm:text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-lg font-general-regular"
             >
-              Software Engineer specializing in React, TypeScript, and NestJS
-              microservices.
+              Building and deploying AI systems for industrial and B2B customers.
               <span className="text-indigo-600 dark:text-indigo-400 font-medium">
                 {" "}
-                MSc-equivalent Engineering background
+                5 years in manufacturing, oil & gas, and distribution
               </span>{" "}
-              — precise, scalable, test-driven.
+              — I know the domain before writing a line of code.
             </motion.p>
 
             <motion.div
@@ -159,9 +158,9 @@ const AppBanner = () => {
               className="flex gap-6 sm:gap-8 pt-2 border-t border-gray-100 dark:border-ternary-dark"
             >
               {[
-                { value: "2+", label: "Years Experience" },
+                { value: "5+", label: "Years Industrial B2B" },
                 { value: "3", label: "Production Apps" },
-                { value: "90%+", label: "Test Coverage" },
+                { value: "AI-Native", label: "Claude Code · Cursor" },
               ].map((stat) => (
                 <div key={stat.label} className="text-left">
                   <p className="text-xl sm:text-2xl font-bold text-primary-dark dark:text-primary-light">
@@ -208,16 +207,16 @@ const AppBanner = () => {
 
             <div className="flex flex-wrap justify-center gap-2 max-w-sm">
               {[
+                "Anthropic API",
+                "RAG Pipelines",
+                "Tool Calling",
+                "Agentic Loops",
                 "TanStack Query",
-                "Zustand",
                 "Prisma ORM",
-                "Mircoservices",
-                "Event Driven Arquitecture",
+                "Event-Driven",
                 "Jest",
                 "CI/CD",
-                "AWS",
-                "Azure",
-                "Agile/SCRUM",
+                "Docker",
               ].map((skill) => (
                 <span
                   key={skill}
